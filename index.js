@@ -12,7 +12,10 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
 const port = process.env.port ||  4000;
-app.use('/',require('./router/routes'))
+app.use('/',require('./router/routes'));
+
+
+
 
 app.get('/',(req,res) => {
     res.send("hello solobachi from express")
