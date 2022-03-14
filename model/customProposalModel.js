@@ -13,17 +13,40 @@ const customProposal = new mongoose.Schema({
    gender:String,
    address:{
     type:String,
-    lowercase:true
+    lowercase:true,
+    required:true
    },
-   dateOfBirth:Date,
+   dateOfBirth:{
+    type:Date,
+    required:true,
+    unique:true
+   },
    stateOfOrigin:String,
-   bvn:String,
-   NIN:Number,
+   bvn:{
+    type:String,
+    required:true,
+    unique:true
+   },
+   NIN:{
+    type:Number,
+    required:true,
+    unique:true
+   },
    photo:String,
    guarantorDetails:{
-    name:String,
-    phoneNumber:Number,
-    address:String,
+    name:{
+      type:String,
+      required:true
+    },
+    phoneNumber:{
+      type:Number,
+      required:true
+    },
+    address:{
+      type:String,
+      required:true,
+      unique:true
+    },
     email:{
       type:String,
       required:true,
@@ -31,14 +54,26 @@ const customProposal = new mongoose.Schema({
     }
    },
    product:{
-    name:String,
+    name:{
+      type:String,
+      required:true
+    },
     price:String,
-    term :String,
+    term :{
+      type:String,
+      required:true
+    },
     type:{
       type:String,
     },
-    numberOfProduct:Number,
-    category:String
+    numberOfProduct:{
+      type:Number,
+      required:true
+    },
+    category:{
+      type:String,
+      required:true
+    }
   }
 }) ;
 

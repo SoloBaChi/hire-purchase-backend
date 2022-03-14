@@ -11,15 +11,30 @@ const existingProposal = new mongoose.Schema({
     unique:true
    },
    dateOfBirth:Date,
-   NIN:Number,
+   NIN:{
+    type:Number,
+    unique:true,
+    required:true
+   },
    address:{
     type:String,
-    lowercase:true
+    lowercase:true,
+    required:true
    },
-   phoneNumber:Number,
-   stateOfOrigin:String,
+   phoneNumber:{
+    type:Number,
+    unique:true,
+    required:true,
+   },
+   stateOfOrigin:{
+    type:String,
+    required:true
+   },
    productName:String,
-   bvn:String,
+   bvn:{
+    type:String,
+    required:true
+   },
    productCategory:String
 }) ;
 
