@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const {jwtAuth} = require('../middleware/jwtAuth');
 
 
 const userController = require('../controller/userController');
@@ -8,7 +9,7 @@ const existingProposalController = require('../controller/existingProposalContro
 
 //Note: the post method takes two parameter name of the path and callbackfunc from userModel mode;
 router.post('/create-user',userController.createUser);
-router.get('/get-user',userController.findUser);
+router.get('/get-user',jwtAuth,userController.findUser);
 router.put('/update-user',userController.updateUser);
 router.delete('/delete-user',userController.deleteUser);
 
